@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="Entities" connectionString="metadata=res://*/NCRE.csdl|res://*/NCRE.ssdl|res://*/NCRE.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.26.207;initial catalog=NCRE2.0;user id=sa;password=TGBfwq207;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+</configuration>

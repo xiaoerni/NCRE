@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="Entities">
+    <EntitySet Name="CharcterControlEntity" EntityType="Model.CharcterControlEntity" />
+    <EntitySet Name="CollegeEntity" EntityType="Model.CollegeEntity" />
+    <EntitySet Name="ControlIpEntity" EntityType="Model.ControlIpEntity" />
+    <EntitySet Name="ExamEntity" EntityType="Model.ExamEntity" />
+    <EntitySet Name="ExamPlaceEntity" EntityType="Model.ExamPlaceEntity" />
+    <EntitySet Name="ExcelQuestionEntity" EntityType="Model.ExcelQuestionEntity" />
+    <EntitySet Name="ExcelQuestionRecordEntity" EntityType="Model.ExcelQuestionRecordEntity" />
+    <EntitySet Name="ExcelSumFration" EntityType="Model.ExcelSumFration" />
+    <EntitySet Name="IEQuestionEntity" EntityType="Model.IEQuestionEntity" />
+    <EntitySet Name="IEQuestionRecordEntity" EntityType="Model.IEQuestionRecordEntity" />
+    <EntitySet Name="IESumFration" EntityType="Model.IESumFration" />
+    <EntitySet Name="OutLookSumFration" EntityType="Model.OutLookSumFration" />
+    <EntitySet Name="PptQuestionEntity" EntityType="Model.PptQuestionEntity" />
+    <EntitySet Name="PptQuestionRecordEntity" EntityType="Model.PptQuestionRecordEntity" />
+    <EntitySet Name="PptSumFration" EntityType="Model.PptSumFration" />
+    <EntitySet Name="QuestionBankEntity" EntityType="Model.QuestionBankEntity" />
+    <EntitySet Name="QuestionTypesEntity" EntityType="Model.QuestionTypesEntity" />
+    <EntitySet Name="ScoreEntity" EntityType="Model.ScoreEntity" />
+    <EntitySet Name="SelectQuestionEntity" EntityType="Model.SelectQuestionEntity" />
+    <EntitySet Name="SelectQuestionRecordEntity" EntityType="Model.SelectQuestionRecordEntity" />
+    <EntitySet Name="SelectSumFration" EntityType="Model.SelectSumFration" />
+    <EntitySet Name="StudentBindPaperTypeEntity" EntityType="Model.StudentBindPaperTypeEntity" />
+    <EntitySet Name="StudentInfoEntity" EntityType="Model.StudentInfoEntity" />
+    <EntitySet Name="StuExamEntity" EntityType="Model.StuExamEntity" />
+    <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+    <EntitySet Name="SystemDictionaryEntity" EntityType="Model.SystemDictionaryEntity" />
+    <EntitySet Name="TemplateEntity" EntityType="Model.TemplateEntity" />
+    <EntitySet Name="UserEntity" EntityType="Model.UserEntity" />
+    <EntitySet Name="WinQuestionEntity" EntityType="Model.WinQuestionEntity" />
+    <EntitySet Name="WinQuestionRecordEntity" EntityType="Model.WinQuestionRecordEntity" />
+    <EntitySet Name="WinSumFration" EntityType="Model.WinSumFration" />
+    <EntitySet Name="WordQuestionEntity" EntityType="Model.WordQuestionEntity" />
+    <EntitySet Name="WordQuestionRecordEntity" EntityType="Model.WordQuestionRecordEntity" />
+    <EntitySet Name="WordSumFration" EntityType="Model.WordSumFration" />
+    <AssociationSet Name="FK_T_stuExam_T_controlIp" Association="Model.FK_T_stuExam_T_controlIp">
+      <End Role="ControlIpEntity" EntitySet="ControlIpEntity" />
+      <End Role="StuExamEntity" EntitySet="StuExamEntity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_examPlace_T_exam" Association="Model.FK_T_examPlace_T_exam">
+      <End Role="ExamEntity" EntitySet="ExamEntity" />
+      <End Role="ExamPlaceEntity" EntitySet="ExamPlaceEntity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_template_T_exam" Association="Model.FK_T_template_T_exam">
+      <End Role="ExamEntity" EntitySet="ExamEntity" />
+      <End Role="TemplateEntity" EntitySet="TemplateEntity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_questionBank_T_questionTypes" Association="Model.FK_T_questionBank_T_questionTypes">
+      <End Role="QuestionTypesEntity" EntitySet="QuestionTypesEntity" />
+      <End Role="QuestionBankEntity" EntitySet="QuestionBankEntity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_template_T_questionTypes" Association="Model.FK_T_template_T_questionTypes">
+      <End Role="QuestionTypesEntity" EntitySet="QuestionTypesEntity" />
+      <End Role="TemplateEntity" EntitySet="TemplateEntity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_stuExam_T_score" Association="Model.FK_T_stuExam_T_score">
+      <End Role="ScoreEntity" EntitySet="ScoreEntity" />
+      <End Role="StuExamEntity" EntitySet="StuExamEntity" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CharcterControlEntity">
+    <Key>
+      <PropertyRef Name="controlID" />
+    </Key>
+    <Property Name="controlID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="controlName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isOffOn" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="operator" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CollegeEntity">
+    <Key>
+      <PropertyRef Name="collegeID" />
+    </Key>
+    <Property Name="collegeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="collegeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ControlIpEntity">
+    <Key>
+      <PropertyRef Name="iP" />
+    </Key>
+    <Property Name="iP" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="collegeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isNoUse" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="StuExamEntity" Relationship="Model.FK_T_stuExam_T_controlIp" FromRole="ControlIpEntity" ToRole="StuExamEntity" />
+  </EntityType>
+  <EntityType Name="ExamEntity">
+    <Key>
+      <PropertyRef Name="examID" />
+    </Key>
+    <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="templateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="examPlaceID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examDate" Type="DateTime" Precision="3" />
+    <Property Name="startTime" Type="DateTime" Precision="3" />
+    <Property Name="endTime" Type="DateTime" Precision="3" />
+    <Property Name="addUser" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="schoolYear" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="spanTime" Type="Int32" />
+    <Property Name="collegeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ExamPlaceEntity" Relationship="Model.FK_T_examPlace_T_exam" FromRole="ExamEntity" ToRole="ExamPlaceEntity" />
+    <NavigationProperty Name="TemplateEntity" Relationship="Model.FK_T_template_T_exam" FromRole="ExamEntity" ToRole="TemplateEntity" />
+  </EntityType>
+  <EntityType Name="ExamPlaceEntity">
+    <Key>
+      <PropertyRef Name="examPlaceID" />
+    </Key>
+    <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examPlaceName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="stateNow" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="shouldNum" Type="Int32" />
+    <Property Name="realNum" Type="Int32" />
+    <Property Name="collegeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ExamEntity" Relationship="Model.FK_T_examPlace_T_exam" FromRole="ExamPlaceEntity" ToRole="ExamEntity" />
+  </EntityType>
+  <EntityType Name="ExcelQuestionEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Double" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="QuestionFlag" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="PositionX" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="PositionY" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="CorrectAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="IsUse" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ExcelQuestionRecordEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Double" Nullable="false" />
+    <Property Name="StudentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="CorrectAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ExamAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Fration" Type="Double" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ExcelSumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="PaperType" />
+      <PropertyRef Name="QuestionTypeID" />
+      <PropertyRef Name="Fration" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" Nullable="false" />
+    <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="IEQuestionEntity">
+    <Key>
+      <PropertyRef Name="questionID" />
+    </Key>
+    <Property Name="questionID" Type="Double" Nullable="false" />
+    <Property Name="questionTypeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="fraction" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="questionFlag" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="questionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="isUse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="IEQuestionRecordEntity">
+    <Key>
+      <PropertyRef Name="questionID" />
+      <PropertyRef Name="studentID" />
+      <PropertyRef Name="questionContent" />
+    </Key>
+    <Property Name="questionID" Type="Double" Nullable="false" />
+    <Property Name="studentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="questionContent" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="examAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fraction" Type="Double" />
+    <Property Name="timeStamp" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="IESumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="PaperType" />
+      <PropertyRef Name="QuestionTypeID" />
+      <PropertyRef Name="Fration" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" Nullable="false" />
+    <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="OutLookSumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" Nullable="false" />
+    <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PptQuestionEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Double" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Fration" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="QuestionFlag" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PptQuestionRecordEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Double" Nullable="false" />
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="RightAnswer" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ExamAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Fration" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="PptSumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="QuestionBankEntity">
+    <Key>
+      <PropertyRef Name="questionID" />
+    </Key>
+    <Property Name="questionID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="fration" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="questionContent" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="answer1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="answer2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="answer3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="answer4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="correctAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="QuestionTypesEntity" Relationship="Model.FK_T_questionBank_T_questionTypes" FromRole="QuestionBankEntity" ToRole="QuestionTypesEntity" />
+  </EntityType>
+  <EntityType Name="QuestionTypesEntity">
+    <Key>
+      <PropertyRef Name="questionTypeID" />
+    </Key>
+    <Property Name="questionTypeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examTemplateID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="operator" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="questionTypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="dateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="QuestionBankEntity" Relationship="Model.FK_T_questionBank_T_questionTypes" FromRole="QuestionTypesEntity" ToRole="QuestionBankEntity" />
+    <NavigationProperty Name="TemplateEntity" Relationship="Model.FK_T_template_T_questionTypes" FromRole="QuestionTypesEntity" ToRole="TemplateEntity" />
+  </EntityType>
+  <EntityType Name="ScoreEntity">
+    <Key>
+      <PropertyRef Name="examID" />
+      <PropertyRef Name="examPlaceID" />
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="studentID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="studentName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="score" Type="Double" />
+    <Property Name="collegeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="StuExamEntity" Relationship="Model.FK_T_stuExam_T_score" FromRole="ScoreEntity" ToRole="StuExamEntity" />
+  </EntityType>
+  <EntityType Name="SelectQuestionEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Fration" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionFlag" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="RightAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsUse" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="OptionA" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionB" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SelectQuestionRecordEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="StudentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionA" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionB" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="OptionD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ExamAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Fration" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SelectSumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" Nullable="false" />
+    <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="StudentBindPaperTypeEntity">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="IsUse" Type="Double" />
+    <Property Name="CollegeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="StudentInfoEntity">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CollegeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="examPlaceID" Type="Double" />
+    <Property Name="studentName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="major" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="grade" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="sex" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="majorClass" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="StuExamEntity">
+    <Key>
+      <PropertyRef Name="studentID" />
+      <PropertyRef Name="examID" />
+      <PropertyRef Name="examPlaceID" />
+    </Key>
+    <Property Name="studentID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="collegeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="studentName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="major" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="grade" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="photoURL" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ControlIpEntity" Relationship="Model.FK_T_stuExam_T_controlIp" FromRole="StuExamEntity" ToRole="ControlIpEntity" />
+    <NavigationProperty Name="ScoreEntity" Relationship="Model.FK_T_stuExam_T_score" FromRole="StuExamEntity" ToRole="ScoreEntity" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SystemDictionaryEntity">
+    <Key>
+      <PropertyRef Name="dictionaryID" />
+    </Key>
+    <Property Name="dictionaryID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="dictionaryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="dictionaryType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="operator" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="dateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TemplateEntity">
+    <Key>
+      <PropertyRef Name="templateID" />
+    </Key>
+    <Property Name="templateID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="templateName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="score" Type="Double" />
+    <Property Name="addUser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="scorePer" Type="Double" />
+    <NavigationProperty Name="ExamEntity" Relationship="Model.FK_T_template_T_exam" FromRole="TemplateEntity" ToRole="ExamEntity" />
+    <NavigationProperty Name="QuestionTypesEntity" Relationship="Model.FK_T_template_T_questionTypes" FromRole="TemplateEntity" ToRole="QuestionTypesEntity" />
+  </EntityType>
+  <EntityType Name="UserEntity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="userPassword" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="operator" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="operatorIP" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="dateTime" Type="DateTime" Precision="3" />
+    <Property Name="onLineState" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WinQuestionEntity">
+    <Key>
+      <PropertyRef Name="questionID" />
+    </Key>
+    <Property Name="questionID" Type="Double" Nullable="false" />
+    <Property Name="questionTypeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="fraction" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="questionFlag" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="questionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="isUse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WinQuestionRecordEntity">
+    <Key>
+      <PropertyRef Name="questionID" />
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="questionID" Type="Double" Nullable="false" />
+    <Property Name="studentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="questionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="examAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fraction" Type="Double" />
+    <Property Name="timeStamp" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WinSumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WordQuestionEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Double" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Fration" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="QuestionFlag" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsUse" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WordQuestionRecordEntity">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="QuestionID" Type="Double" Nullable="false" />
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="53" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ExamAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Fration" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TimeStamp" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WordSumFration">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Fration" Type="Double" />
+    <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_T_stuExam_T_controlIp">
+    <End Role="ControlIpEntity" Type="Model.ControlIpEntity" Multiplicity="0..1" />
+    <End Role="StuExamEntity" Type="Model.StuExamEntity" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_T_examPlace_T_exam">
+    <End Role="ExamEntity" Type="Model.ExamEntity" Multiplicity="1" />
+    <End Role="ExamPlaceEntity" Type="Model.ExamPlaceEntity" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_T_template_T_exam">
+    <End Role="ExamEntity" Type="Model.ExamEntity" Multiplicity="0..1" />
+    <End Role="TemplateEntity" Type="Model.TemplateEntity" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_T_questionBank_T_questionTypes">
+    <End Role="QuestionTypesEntity" Type="Model.QuestionTypesEntity" Multiplicity="1" />
+    <End Role="QuestionBankEntity" Type="Model.QuestionBankEntity" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_T_template_T_questionTypes">
+    <End Role="QuestionTypesEntity" Type="Model.QuestionTypesEntity" Multiplicity="0..1" />
+    <End Role="TemplateEntity" Type="Model.TemplateEntity" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_T_stuExam_T_score">
+    <End Role="ScoreEntity" Type="Model.ScoreEntity" Multiplicity="1" />
+    <End Role="StuExamEntity" Type="Model.StuExamEntity" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ScoreEntity">
+        <PropertyRef Name="examID" />
+        <PropertyRef Name="examPlaceID" />
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="StuExamEntity">
+        <PropertyRef Name="examID" />
+        <PropertyRef Name="examPlaceID" />
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,1783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CharcterControlEntity" EntityType="Model.Store.CharcterControlEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CollegeEntity" EntityType="Model.Store.CollegeEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ControlIpEntity" EntityType="Model.Store.ControlIpEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExamEntity" EntityType="Model.Store.ExamEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExamPlaceEntity" EntityType="Model.Store.ExamPlaceEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExcelQuestionEntity" EntityType="Model.Store.ExcelQuestionEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExcelQuestionRecordEntity" EntityType="Model.Store.ExcelQuestionRecordEntity" store:Type="Tables" store:Schema="dbo" store:Name="ExcelQuestionRecordEntity">
+            <DefiningQuery>SELECT 
+      [ExcelQuestionRecordEntity].[QuestionID] AS [QuestionID], 
+      [ExcelQuestionRecordEntity].[StudentID] AS [StudentID], 
+      [ExcelQuestionRecordEntity].[PaperType] AS [PaperType], 
+      [ExcelQuestionRecordEntity].[QuestionContent] AS [QuestionContent], 
+      [ExcelQuestionRecordEntity].[CorrectAnswer] AS [CorrectAnswer], 
+      [ExcelQuestionRecordEntity].[ExamAnswer] AS [ExamAnswer], 
+      [ExcelQuestionRecordEntity].[Fration] AS [Fration], 
+      [ExcelQuestionRecordEntity].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[ExcelQuestionRecordEntity] AS [ExcelQuestionRecordEntity]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ExcelSumFration" EntityType="Model.Store.ExcelSumFration" store:Type="Tables" store:Schema="dbo" store:Name="ExcelSumFration">
+            <DefiningQuery>SELECT 
+      [ExcelSumFration].[StudentID] AS [StudentID], 
+      [ExcelSumFration].[PaperType] AS [PaperType], 
+      [ExcelSumFration].[QuestionTypeID] AS [QuestionTypeID], 
+      [ExcelSumFration].[Fration] AS [Fration], 
+      [ExcelSumFration].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[ExcelSumFration] AS [ExcelSumFration]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="IEQuestionEntity" EntityType="Model.Store.IEQuestionEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IEQuestionRecordEntity" EntityType="Model.Store.IEQuestionRecordEntity" store:Type="Tables" store:Schema="dbo" store:Name="IEQuestionRecordEntity">
+            <DefiningQuery>SELECT 
+      [IEQuestionRecordEntity].[questionID] AS [questionID], 
+      [IEQuestionRecordEntity].[studentID] AS [studentID], 
+      [IEQuestionRecordEntity].[paperType] AS [paperType], 
+      [IEQuestionRecordEntity].[questionContent] AS [questionContent], 
+      [IEQuestionRecordEntity].[correctAnswer] AS [correctAnswer], 
+      [IEQuestionRecordEntity].[examAnswer] AS [examAnswer], 
+      [IEQuestionRecordEntity].[fraction] AS [fraction], 
+      [IEQuestionRecordEntity].[timeStamp] AS [timeStamp]
+      FROM [dbo].[IEQuestionRecordEntity] AS [IEQuestionRecordEntity]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="IESumFration" EntityType="Model.Store.IESumFration" store:Type="Tables" store:Schema="dbo" store:Name="IESumFration">
+            <DefiningQuery>SELECT 
+      [IESumFration].[StudentID] AS [StudentID], 
+      [IESumFration].[PaperType] AS [PaperType], 
+      [IESumFration].[QuestionTypeID] AS [QuestionTypeID], 
+      [IESumFration].[Fration] AS [Fration], 
+      [IESumFration].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[IESumFration] AS [IESumFration]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OutLookSumFration" EntityType="Model.Store.OutLookSumFration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PptQuestionEntity" EntityType="Model.Store.PptQuestionEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PptQuestionRecordEntity" EntityType="Model.Store.PptQuestionRecordEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PptSumFration" EntityType="Model.Store.PptSumFration" store:Type="Tables" store:Schema="dbo" store:Name="PptSumFration">
+            <DefiningQuery>SELECT 
+      [PptSumFration].[StudentID] AS [StudentID], 
+      [PptSumFration].[PaperType] AS [PaperType], 
+      [PptSumFration].[QuestionTypeID] AS [QuestionTypeID], 
+      [PptSumFration].[Fration] AS [Fration], 
+      [PptSumFration].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[PptSumFration] AS [PptSumFration]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="QuestionBankEntity" EntityType="Model.Store.QuestionBankEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuestionTypesEntity" EntityType="Model.Store.QuestionTypesEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScoreEntity" EntityType="Model.Store.ScoreEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SelectQuestionEntity" EntityType="Model.Store.SelectQuestionEntity" store:Type="Tables" store:Schema="dbo" store:Name="SelectQuestionEntity">
+            <DefiningQuery>SELECT 
+      [SelectQuestionEntity].[QuestionID] AS [QuestionID], 
+      [SelectQuestionEntity].[QuestionTypeID] AS [QuestionTypeID], 
+      [SelectQuestionEntity].[Fration] AS [Fration], 
+      [SelectQuestionEntity].[QuestionFlag] AS [QuestionFlag], 
+      [SelectQuestionEntity].[QuestionContent] AS [QuestionContent], 
+      [SelectQuestionEntity].[RightAnswer] AS [RightAnswer], 
+      [SelectQuestionEntity].[IsUse] AS [IsUse], 
+      [SelectQuestionEntity].[OptionA] AS [OptionA], 
+      [SelectQuestionEntity].[OptionB] AS [OptionB], 
+      [SelectQuestionEntity].[OptionC] AS [OptionC], 
+      [SelectQuestionEntity].[OptionD] AS [OptionD]
+      FROM [dbo].[SelectQuestionEntity] AS [SelectQuestionEntity]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SelectQuestionRecordEntity" EntityType="Model.Store.SelectQuestionRecordEntity" store:Type="Tables" store:Schema="dbo" store:Name="SelectQuestionRecordEntity">
+            <DefiningQuery>SELECT 
+      [SelectQuestionRecordEntity].[QuestionID] AS [QuestionID], 
+      [SelectQuestionRecordEntity].[StudentID] AS [StudentID], 
+      [SelectQuestionRecordEntity].[PaperType] AS [PaperType], 
+      [SelectQuestionRecordEntity].[QuestionContent] AS [QuestionContent], 
+      [SelectQuestionRecordEntity].[OptionA] AS [OptionA], 
+      [SelectQuestionRecordEntity].[OptionB] AS [OptionB], 
+      [SelectQuestionRecordEntity].[OptionC] AS [OptionC], 
+      [SelectQuestionRecordEntity].[OptionD] AS [OptionD], 
+      [SelectQuestionRecordEntity].[RightAnswer] AS [RightAnswer], 
+      [SelectQuestionRecordEntity].[ExamAnswer] AS [ExamAnswer], 
+      [SelectQuestionRecordEntity].[Fration] AS [Fration], 
+      [SelectQuestionRecordEntity].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[SelectQuestionRecordEntity] AS [SelectQuestionRecordEntity]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SelectSumFration" EntityType="Model.Store.SelectSumFration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StudentBindPaperTypeEntity" EntityType="Model.Store.StudentBindPaperTypeEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StudentInfoEntity" EntityType="Model.Store.StudentInfoEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StuExamEntity" EntityType="Model.Store.StuExamEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SystemDictionaryEntity" EntityType="Model.Store.SystemDictionaryEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TemplateEntity" EntityType="Model.Store.TemplateEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserEntity" EntityType="Model.Store.UserEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WinQuestionEntity" EntityType="Model.Store.WinQuestionEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WinQuestionRecordEntity" EntityType="Model.Store.WinQuestionRecordEntity" store:Type="Tables" store:Schema="dbo" store:Name="WinQuestionRecordEntity">
+            <DefiningQuery>SELECT 
+      [WinQuestionRecordEntity].[questionID] AS [questionID], 
+      [WinQuestionRecordEntity].[studentID] AS [studentID], 
+      [WinQuestionRecordEntity].[paperType] AS [paperType], 
+      [WinQuestionRecordEntity].[questionContent] AS [questionContent], 
+      [WinQuestionRecordEntity].[correctAnswer] AS [correctAnswer], 
+      [WinQuestionRecordEntity].[examAnswer] AS [examAnswer], 
+      [WinQuestionRecordEntity].[fraction] AS [fraction], 
+      [WinQuestionRecordEntity].[timeStamp] AS [timeStamp]
+      FROM [dbo].[WinQuestionRecordEntity] AS [WinQuestionRecordEntity]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WinSumFration" EntityType="Model.Store.WinSumFration" store:Type="Tables" store:Schema="dbo" store:Name="WinSumFration">
+            <DefiningQuery>SELECT 
+      [WinSumFration].[StudentID] AS [StudentID], 
+      [WinSumFration].[PaperType] AS [PaperType], 
+      [WinSumFration].[QuestionTypeID] AS [QuestionTypeID], 
+      [WinSumFration].[Fration] AS [Fration], 
+      [WinSumFration].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[WinSumFration] AS [WinSumFration]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WordQuestionEntity" EntityType="Model.Store.WordQuestionEntity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WordQuestionRecordEntity" EntityType="Model.Store.WordQuestionRecordEntity" store:Type="Tables" store:Schema="dbo" store:Name="WordQuestionRecordEntity">
+            <DefiningQuery>SELECT 
+      [WordQuestionRecordEntity].[QuestionID] AS [QuestionID], 
+      [WordQuestionRecordEntity].[StudentID] AS [StudentID], 
+      [WordQuestionRecordEntity].[PaperType] AS [PaperType], 
+      [WordQuestionRecordEntity].[QuestionContent] AS [QuestionContent], 
+      [WordQuestionRecordEntity].[RightAnswer] AS [RightAnswer], 
+      [WordQuestionRecordEntity].[ExamAnswer] AS [ExamAnswer], 
+      [WordQuestionRecordEntity].[Fration] AS [Fration], 
+      [WordQuestionRecordEntity].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[WordQuestionRecordEntity] AS [WordQuestionRecordEntity]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WordSumFration" EntityType="Model.Store.WordSumFration" store:Type="Tables" store:Schema="dbo" store:Name="WordSumFration">
+            <DefiningQuery>SELECT 
+      [WordSumFration].[StudentID] AS [StudentID], 
+      [WordSumFration].[PaperType] AS [PaperType], 
+      [WordSumFration].[QuestionTypeID] AS [QuestionTypeID], 
+      [WordSumFration].[Fration] AS [Fration], 
+      [WordSumFration].[TimeStamp] AS [TimeStamp]
+      FROM [dbo].[WordSumFration] AS [WordSumFration]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_T_examPlace_T_exam" Association="Model.Store.FK_T_examPlace_T_exam">
+            <End Role="ExamEntity" EntitySet="ExamEntity" />
+            <End Role="ExamPlaceEntity" EntitySet="ExamPlaceEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_questionBank_T_questionTypes" Association="Model.Store.FK_T_questionBank_T_questionTypes">
+            <End Role="QuestionTypesEntity" EntitySet="QuestionTypesEntity" />
+            <End Role="QuestionBankEntity" EntitySet="QuestionBankEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_stuExam_T_controlIp" Association="Model.Store.FK_T_stuExam_T_controlIp">
+            <End Role="ControlIpEntity" EntitySet="ControlIpEntity" />
+            <End Role="StuExamEntity" EntitySet="StuExamEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_stuExam_T_score" Association="Model.Store.FK_T_stuExam_T_score">
+            <End Role="ScoreEntity" EntitySet="ScoreEntity" />
+            <End Role="StuExamEntity" EntitySet="StuExamEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_template_T_exam" Association="Model.Store.FK_T_template_T_exam">
+            <End Role="ExamEntity" EntitySet="ExamEntity" />
+            <End Role="TemplateEntity" EntitySet="TemplateEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_template_T_questionTypes" Association="Model.Store.FK_T_template_T_questionTypes">
+            <End Role="QuestionTypesEntity" EntitySet="QuestionTypesEntity" />
+            <End Role="TemplateEntity" EntitySet="TemplateEntity" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CharcterControlEntity">
+          <Key>
+            <PropertyRef Name="controlID" />
+          </Key>
+          <Property Name="controlID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="controlName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="isOffOn" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="dateTime" Type="datetime" Nullable="false" />
+          <Property Name="operator" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="remark" Type="text" />
+        </EntityType>
+        <EntityType Name="CollegeEntity">
+          <Key>
+            <PropertyRef Name="collegeID" />
+          </Key>
+          <Property Name="collegeID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="collegeName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ControlIpEntity">
+          <Key>
+            <PropertyRef Name="iP" />
+          </Key>
+          <Property Name="iP" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="collegeID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="isNoUse" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examPlaceID" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ExamEntity">
+          <Key>
+            <PropertyRef Name="examID" />
+          </Key>
+          <Property Name="examID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="templateID" Type="varchar" MaxLength="20" />
+          <Property Name="examName" Type="varchar" MaxLength="50" />
+          <Property Name="examPlaceID" Type="varchar" MaxLength="20" />
+          <Property Name="examDate" Type="datetime" />
+          <Property Name="startTime" Type="datetime" />
+          <Property Name="endTime" Type="datetime" />
+          <Property Name="addUser" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="isUse" Type="varchar" MaxLength="20" />
+          <Property Name="schoolYear" Type="varchar" MaxLength="50" />
+          <Property Name="spanTime" Type="int" />
+          <Property Name="collegeID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ExamPlaceEntity">
+          <Key>
+            <PropertyRef Name="examPlaceID" />
+          </Key>
+          <Property Name="examPlaceID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examPlaceName" Type="varchar" MaxLength="50" />
+          <Property Name="stateNow" Type="varchar" MaxLength="20" />
+          <Property Name="shouldNum" Type="int" />
+          <Property Name="realNum" Type="int" />
+          <Property Name="collegeID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ExcelQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="float" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="nchar" MaxLength="10" />
+          <Property Name="Fration" Type="nchar" MaxLength="10" />
+          <Property Name="PaperType" Type="nchar" MaxLength="10" />
+          <Property Name="QuestionFlag" Type="nchar" MaxLength="10" />
+          <Property Name="QuestionContent" Type="varchar(max)" />
+          <Property Name="PositionX" Type="nchar" MaxLength="10" />
+          <Property Name="PositionY" Type="nchar" MaxLength="10" />
+          <Property Name="CorrectAnswer" Type="varchar(max)" />
+          <Property Name="IsUse" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.ExcelQuestionRecordEntity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="ExcelQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="float" Nullable="false" />
+          <Property Name="StudentID" Type="varchar" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionContent" Type="varchar(max)" />
+          <Property Name="CorrectAnswer" Type="varchar(max)" />
+          <Property Name="ExamAnswer" Type="varchar(max)" />
+          <Property Name="Fration" Type="float" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.ExcelSumFration”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="ExcelSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="PaperType" />
+            <PropertyRef Name="QuestionTypeID" />
+            <PropertyRef Name="Fration" />
+            <PropertyRef Name="TimeStamp" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Fration" Type="float" Nullable="false" />
+          <Property Name="TimeStamp" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IEQuestionEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="float" Nullable="false" />
+          <Property Name="questionTypeID" Type="varchar" MaxLength="20" />
+          <Property Name="paperType" Type="varchar" MaxLength="20" />
+          <Property Name="fraction" Type="nvarchar" MaxLength="50" />
+          <Property Name="questionFlag" Type="varchar" MaxLength="20" />
+          <Property Name="questionContent" Type="varchar(max)" />
+          <Property Name="correctAnswer" Type="varchar(max)" />
+          <Property Name="isUse" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.IEQuestionRecordEntity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="IEQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+            <PropertyRef Name="studentID" />
+            <PropertyRef Name="questionContent" />
+          </Key>
+          <Property Name="questionID" Type="float" Nullable="false" />
+          <Property Name="studentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="paperType" Type="varchar" MaxLength="20" />
+          <Property Name="questionContent" Type="varchar(max)" Nullable="false" />
+          <Property Name="correctAnswer" Type="varchar(max)" />
+          <Property Name="examAnswer" Type="varchar(max)" />
+          <Property Name="fraction" Type="float" />
+          <Property Name="timeStamp" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.IESumFration”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="IESumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="PaperType" />
+            <PropertyRef Name="QuestionTypeID" />
+            <PropertyRef Name="Fration" />
+            <PropertyRef Name="TimeStamp" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Fration" Type="float" Nullable="false" />
+          <Property Name="TimeStamp" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OutLookSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Fration" Type="float" Nullable="false" />
+          <Property Name="TimeStamp" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PptQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="float" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="nvarchar" MaxLength="255" />
+          <Property Name="PaperType" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fration" Type="nvarchar" MaxLength="255" />
+          <Property Name="QuestionFlag" Type="nvarchar(max)" />
+          <Property Name="QuestionContent" Type="nvarchar(max)" />
+          <Property Name="RightAnswer" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PptQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="float" Nullable="false" />
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="QuestionContent" Type="varchar(max)" Nullable="false" />
+          <Property Name="RightAnswer" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ExamAnswer" Type="varchar" MaxLength="50" />
+          <Property Name="Fration" Type="varchar" MaxLength="50" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+          <Property Name="PaperType" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.PptSumFration”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="PptSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" MaxLength="10" />
+          <Property Name="Fration" Type="float" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="QuestionBankEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="questionTypeID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fration" Type="varchar" MaxLength="20" />
+          <Property Name="questionContent" Type="varchar" MaxLength="200" />
+          <Property Name="answer1" Type="varchar" MaxLength="50" />
+          <Property Name="answer2" Type="varchar" MaxLength="50" />
+          <Property Name="answer3" Type="varchar" MaxLength="50" />
+          <Property Name="answer4" Type="varchar" MaxLength="50" />
+          <Property Name="correctAnswer" Type="varchar" MaxLength="50" />
+          <Property Name="isUse" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="QuestionTypesEntity">
+          <Key>
+            <PropertyRef Name="questionTypeID" />
+          </Key>
+          <Property Name="questionTypeID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examTemplateID" Type="varchar" MaxLength="50" />
+          <Property Name="operator" Type="varchar" MaxLength="20" />
+          <Property Name="questionTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="dateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ScoreEntity">
+          <Key>
+            <PropertyRef Name="examID" />
+            <PropertyRef Name="examPlaceID" />
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="examID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examPlaceID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="studentID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="studentName" Type="varchar" MaxLength="20" />
+          <Property Name="score" Type="float" />
+          <Property Name="collegeID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.SelectQuestionEntity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="SelectQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="varchar" MaxLength="10" />
+          <Property Name="Fration" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionFlag" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionContent" Type="varchar(max)" />
+          <Property Name="RightAnswer" Type="varchar" MaxLength="50" />
+          <Property Name="IsUse" Type="varchar" MaxLength="10" />
+          <Property Name="OptionA" Type="varchar(max)" />
+          <Property Name="OptionB" Type="varchar(max)" />
+          <Property Name="OptionC" Type="varchar(max)" />
+          <Property Name="OptionD" Type="varchar(max)" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.SelectQuestionRecordEntity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="SelectQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="StudentID" Type="varchar" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionContent" Type="varchar(max)" />
+          <Property Name="OptionA" Type="varchar(max)" />
+          <Property Name="OptionB" Type="varchar(max)" />
+          <Property Name="OptionC" Type="varchar(max)" />
+          <Property Name="OptionD" Type="varchar(max)" />
+          <Property Name="RightAnswer" Type="varchar(max)" />
+          <Property Name="ExamAnswer" Type="varchar(max)" />
+          <Property Name="Fration" Type="decimal" Precision="20" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SelectSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Fration" Type="float" Nullable="false" />
+          <Property Name="TimeStamp" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StudentBindPaperTypeEntity">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="PaperType" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsUse" Type="float" />
+          <Property Name="CollegeID" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="StudentInfoEntity">
+          <Key>
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="studentID" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="CollegeID" Type="nvarchar" MaxLength="255" />
+          <Property Name="examPlaceID" Type="float" />
+          <Property Name="studentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="major" Type="nvarchar" MaxLength="255" />
+          <Property Name="grade" Type="nvarchar" MaxLength="255" />
+          <Property Name="sex" Type="nvarchar" MaxLength="255" />
+          <Property Name="majorClass" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="StuExamEntity">
+          <Key>
+            <PropertyRef Name="studentID" />
+            <PropertyRef Name="examID" />
+            <PropertyRef Name="examPlaceID" />
+          </Key>
+          <Property Name="studentID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examPlaceID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="collegeID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="studentName" Type="varchar" MaxLength="20" />
+          <Property Name="major" Type="varchar" MaxLength="50" />
+          <Property Name="grade" Type="varchar" MaxLength="20" />
+          <Property Name="photoURL" Type="varchar" MaxLength="1000" />
+          <Property Name="iP" Type="varchar" MaxLength="150" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="SystemDictionaryEntity">
+          <Key>
+            <PropertyRef Name="dictionaryID" />
+          </Key>
+          <Property Name="dictionaryID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="dictionaryName" Type="varchar" MaxLength="50" />
+          <Property Name="dictionaryType" Type="varchar" MaxLength="50" />
+          <Property Name="isUse" Type="varchar" MaxLength="20" />
+          <Property Name="operator" Type="varchar" MaxLength="20" />
+          <Property Name="dateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TemplateEntity">
+          <Key>
+            <PropertyRef Name="templateID" />
+          </Key>
+          <Property Name="templateID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="examID" Type="varchar" MaxLength="20" />
+          <Property Name="templateName" Type="varchar" MaxLength="50" />
+          <Property Name="isUse" Type="varchar" MaxLength="20" />
+          <Property Name="score" Type="float" />
+          <Property Name="addUser" Type="varchar" MaxLength="20" />
+          <Property Name="questionTypeID" Type="varchar" MaxLength="20" />
+          <Property Name="scorePer" Type="float" />
+        </EntityType>
+        <EntityType Name="UserEntity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+          <Property Name="userPassword" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="operator" Type="varchar" MaxLength="20" />
+          <Property Name="operatorIP" Type="varchar" MaxLength="150" />
+          <Property Name="dateTime" Type="datetime" />
+          <Property Name="onLineState" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="WinQuestionEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="float" Nullable="false" />
+          <Property Name="questionTypeID" Type="varchar" MaxLength="20" />
+          <Property Name="paperType" Type="varchar" MaxLength="20" />
+          <Property Name="fraction" Type="varchar" MaxLength="50" />
+          <Property Name="questionFlag" Type="varchar" MaxLength="20" />
+          <Property Name="questionContent" Type="varchar(max)" />
+          <Property Name="correctAnswer" Type="varchar(max)" />
+          <Property Name="isUse" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.WinQuestionRecordEntity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="WinQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="questionID" Type="float" Nullable="false" />
+          <Property Name="studentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="paperType" Type="varchar" MaxLength="20" />
+          <Property Name="questionContent" Type="varchar(max)" />
+          <Property Name="correctAnswer" Type="varchar(max)" />
+          <Property Name="examAnswer" Type="varchar(max)" />
+          <Property Name="fraction" Type="float" />
+          <Property Name="timeStamp" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.WinSumFration”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="WinSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" MaxLength="10" />
+          <Property Name="Fration" Type="float" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WordQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="float" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fration" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaperType" Type="nvarchar" MaxLength="255" />
+          <Property Name="QuestionFlag" Type="nvarchar(max)" />
+          <Property Name="QuestionContent" Type="nvarchar(max)" />
+          <Property Name="RightAnswer" Type="nvarchar(max)" />
+          <Property Name="IsUse" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.WordQuestionRecordEntity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="WordQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="QuestionID" Type="float" Nullable="false" />
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="53" />
+          <Property Name="PaperType" Type="nvarchar" MaxLength="255" />
+          <Property Name="QuestionContent" Type="nvarchar(max)" />
+          <Property Name="RightAnswer" Type="nvarchar(max)" />
+          <Property Name="ExamAnswer" Type="nvarchar(max)" />
+          <Property Name="Fration" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeStamp" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“NCRE2.0.dbo.WordSumFration”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="WordSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaperType" Type="varchar" MaxLength="10" />
+          <Property Name="QuestionTypeID" Type="nchar" MaxLength="10" />
+          <Property Name="Fration" Type="float" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_T_examPlace_T_exam">
+          <End Role="ExamEntity" Type="Model.Store.ExamEntity" Multiplicity="1" />
+          <End Role="ExamPlaceEntity" Type="Model.Store.ExamPlaceEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExamEntity">
+              <PropertyRef Name="examID" />
+            </Principal>
+            <Dependent Role="ExamPlaceEntity">
+              <PropertyRef Name="examID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_questionBank_T_questionTypes">
+          <End Role="QuestionTypesEntity" Type="Model.Store.QuestionTypesEntity" Multiplicity="1" />
+          <End Role="QuestionBankEntity" Type="Model.Store.QuestionBankEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionTypesEntity">
+              <PropertyRef Name="questionTypeID" />
+            </Principal>
+            <Dependent Role="QuestionBankEntity">
+              <PropertyRef Name="questionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_stuExam_T_controlIp">
+          <End Role="ControlIpEntity" Type="Model.Store.ControlIpEntity" Multiplicity="0..1" />
+          <End Role="StuExamEntity" Type="Model.Store.StuExamEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ControlIpEntity">
+              <PropertyRef Name="iP" />
+            </Principal>
+            <Dependent Role="StuExamEntity">
+              <PropertyRef Name="iP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_stuExam_T_score">
+          <End Role="ScoreEntity" Type="Model.Store.ScoreEntity" Multiplicity="1" />
+          <End Role="StuExamEntity" Type="Model.Store.StuExamEntity" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ScoreEntity">
+              <PropertyRef Name="examID" />
+              <PropertyRef Name="examPlaceID" />
+              <PropertyRef Name="studentID" />
+            </Principal>
+            <Dependent Role="StuExamEntity">
+              <PropertyRef Name="examID" />
+              <PropertyRef Name="examPlaceID" />
+              <PropertyRef Name="studentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_template_T_exam">
+          <End Role="ExamEntity" Type="Model.Store.ExamEntity" Multiplicity="0..1" />
+          <End Role="TemplateEntity" Type="Model.Store.TemplateEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExamEntity">
+              <PropertyRef Name="examID" />
+            </Principal>
+            <Dependent Role="TemplateEntity">
+              <PropertyRef Name="examID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_template_T_questionTypes">
+          <End Role="QuestionTypesEntity" Type="Model.Store.QuestionTypesEntity" Multiplicity="0..1" />
+          <End Role="TemplateEntity" Type="Model.Store.TemplateEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionTypesEntity">
+              <PropertyRef Name="questionTypeID" />
+            </Principal>
+            <Dependent Role="TemplateEntity">
+              <PropertyRef Name="questionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--生成过程中发现错误:
+      警告 6013: 表/视图“NCRE2.0.dbo.DataDictionary”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="DataDictionary">
+        <Property Name="questionContent" Type="nvarchar" MaxLength="100" />
+        <Property Name="questionFlag" Type="nvarchar" MaxLength="100" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="Entities">
+          <EntitySet Name="CharcterControlEntity" EntityType="Model.CharcterControlEntity" />
+          <EntitySet Name="CollegeEntity" EntityType="Model.CollegeEntity" />
+          <EntitySet Name="ControlIpEntity" EntityType="Model.ControlIpEntity" />
+          <EntitySet Name="ExamEntity" EntityType="Model.ExamEntity" />
+          <EntitySet Name="ExamPlaceEntity" EntityType="Model.ExamPlaceEntity" />
+          <EntitySet Name="ExcelQuestionEntity" EntityType="Model.ExcelQuestionEntity" />
+          <EntitySet Name="ExcelQuestionRecordEntity" EntityType="Model.ExcelQuestionRecordEntity" />
+          <EntitySet Name="ExcelSumFration" EntityType="Model.ExcelSumFration" />
+          <EntitySet Name="IEQuestionEntity" EntityType="Model.IEQuestionEntity" />
+          <EntitySet Name="IEQuestionRecordEntity" EntityType="Model.IEQuestionRecordEntity" />
+          <EntitySet Name="IESumFration" EntityType="Model.IESumFration" />
+          <EntitySet Name="OutLookSumFration" EntityType="Model.OutLookSumFration" />
+          <EntitySet Name="PptQuestionEntity" EntityType="Model.PptQuestionEntity" />
+          <EntitySet Name="PptQuestionRecordEntity" EntityType="Model.PptQuestionRecordEntity" />
+          <EntitySet Name="PptSumFration" EntityType="Model.PptSumFration" />
+          <EntitySet Name="QuestionBankEntity" EntityType="Model.QuestionBankEntity" />
+          <EntitySet Name="QuestionTypesEntity" EntityType="Model.QuestionTypesEntity" />
+          <EntitySet Name="ScoreEntity" EntityType="Model.ScoreEntity" />
+          <EntitySet Name="SelectQuestionEntity" EntityType="Model.SelectQuestionEntity" />
+          <EntitySet Name="SelectQuestionRecordEntity" EntityType="Model.SelectQuestionRecordEntity" />
+          <EntitySet Name="SelectSumFration" EntityType="Model.SelectSumFration" />
+          <EntitySet Name="StudentBindPaperTypeEntity" EntityType="Model.StudentBindPaperTypeEntity" />
+          <EntitySet Name="StudentInfoEntity" EntityType="Model.StudentInfoEntity" />
+          <EntitySet Name="StuExamEntity" EntityType="Model.StuExamEntity" />
+          <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+          <EntitySet Name="SystemDictionaryEntity" EntityType="Model.SystemDictionaryEntity" />
+          <EntitySet Name="TemplateEntity" EntityType="Model.TemplateEntity" />
+          <EntitySet Name="UserEntity" EntityType="Model.UserEntity" />
+          <EntitySet Name="WinQuestionEntity" EntityType="Model.WinQuestionEntity" />
+          <EntitySet Name="WinQuestionRecordEntity" EntityType="Model.WinQuestionRecordEntity" />
+          <EntitySet Name="WinSumFration" EntityType="Model.WinSumFration" />
+          <EntitySet Name="WordQuestionEntity" EntityType="Model.WordQuestionEntity" />
+          <EntitySet Name="WordQuestionRecordEntity" EntityType="Model.WordQuestionRecordEntity" />
+          <EntitySet Name="WordSumFration" EntityType="Model.WordSumFration" />
+          <AssociationSet Name="FK_T_stuExam_T_controlIp" Association="Model.FK_T_stuExam_T_controlIp">
+            <End Role="ControlIpEntity" EntitySet="ControlIpEntity" />
+            <End Role="StuExamEntity" EntitySet="StuExamEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_examPlace_T_exam" Association="Model.FK_T_examPlace_T_exam">
+            <End Role="ExamEntity" EntitySet="ExamEntity" />
+            <End Role="ExamPlaceEntity" EntitySet="ExamPlaceEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_template_T_exam" Association="Model.FK_T_template_T_exam">
+            <End Role="ExamEntity" EntitySet="ExamEntity" />
+            <End Role="TemplateEntity" EntitySet="TemplateEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_questionBank_T_questionTypes" Association="Model.FK_T_questionBank_T_questionTypes">
+            <End Role="QuestionTypesEntity" EntitySet="QuestionTypesEntity" />
+            <End Role="QuestionBankEntity" EntitySet="QuestionBankEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_template_T_questionTypes" Association="Model.FK_T_template_T_questionTypes">
+            <End Role="QuestionTypesEntity" EntitySet="QuestionTypesEntity" />
+            <End Role="TemplateEntity" EntitySet="TemplateEntity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_stuExam_T_score" Association="Model.FK_T_stuExam_T_score">
+            <End Role="ScoreEntity" EntitySet="ScoreEntity" />
+            <End Role="StuExamEntity" EntitySet="StuExamEntity" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CharcterControlEntity">
+          <Key>
+            <PropertyRef Name="controlID" />
+          </Key>
+          <Property Name="controlID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="controlName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isOffOn" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="operator" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CollegeEntity">
+          <Key>
+            <PropertyRef Name="collegeID" />
+          </Key>
+          <Property Name="collegeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="collegeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ControlIpEntity">
+          <Key>
+            <PropertyRef Name="iP" />
+          </Key>
+          <Property Name="iP" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="collegeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="isNoUse" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="StuExamEntity" Relationship="Model.FK_T_stuExam_T_controlIp" FromRole="ControlIpEntity" ToRole="StuExamEntity" />
+        </EntityType>
+        <EntityType Name="ExamEntity">
+          <Key>
+            <PropertyRef Name="examID" />
+          </Key>
+          <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="templateID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="examPlaceID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examDate" Type="DateTime" Precision="3" />
+          <Property Name="startTime" Type="DateTime" Precision="3" />
+          <Property Name="endTime" Type="DateTime" Precision="3" />
+          <Property Name="addUser" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="schoolYear" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="spanTime" Type="Int32" />
+          <Property Name="collegeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ExamPlaceEntity" Relationship="Model.FK_T_examPlace_T_exam" FromRole="ExamEntity" ToRole="ExamPlaceEntity" />
+          <NavigationProperty Name="TemplateEntity" Relationship="Model.FK_T_template_T_exam" FromRole="ExamEntity" ToRole="TemplateEntity" />
+        </EntityType>
+        <EntityType Name="ExamPlaceEntity">
+          <Key>
+            <PropertyRef Name="examPlaceID" />
+          </Key>
+          <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examPlaceName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="stateNow" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="shouldNum" Type="Int32" />
+          <Property Name="realNum" Type="Int32" />
+          <Property Name="collegeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ExamEntity" Relationship="Model.FK_T_examPlace_T_exam" FromRole="ExamPlaceEntity" ToRole="ExamEntity" />
+        </EntityType>
+        <EntityType Name="ExcelQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Double" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="QuestionFlag" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PositionX" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="PositionY" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="CorrectAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IsUse" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ExcelQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Double" Nullable="false" />
+          <Property Name="StudentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CorrectAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ExamAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Fration" Type="Double" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ExcelSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="PaperType" />
+            <PropertyRef Name="QuestionTypeID" />
+            <PropertyRef Name="Fration" />
+            <PropertyRef Name="TimeStamp" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" Nullable="false" />
+          <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="IEQuestionEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="Double" Nullable="false" />
+          <Property Name="questionTypeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fraction" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="questionFlag" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="questionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="isUse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="IEQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+            <PropertyRef Name="studentID" />
+            <PropertyRef Name="questionContent" />
+          </Key>
+          <Property Name="questionID" Type="Double" Nullable="false" />
+          <Property Name="studentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="questionContent" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="examAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="fraction" Type="Double" />
+          <Property Name="timeStamp" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="IESumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="PaperType" />
+            <PropertyRef Name="QuestionTypeID" />
+            <PropertyRef Name="Fration" />
+            <PropertyRef Name="TimeStamp" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" Nullable="false" />
+          <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="OutLookSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" Nullable="false" />
+          <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PptQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Double" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Fration" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="QuestionFlag" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PptQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Double" Nullable="false" />
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="RightAnswer" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ExamAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fration" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="PptSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="QuestionBankEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fration" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="questionContent" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="answer1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="answer2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="answer3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="answer4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="correctAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="QuestionTypesEntity" Relationship="Model.FK_T_questionBank_T_questionTypes" FromRole="QuestionBankEntity" ToRole="QuestionTypesEntity" />
+        </EntityType>
+        <EntityType Name="QuestionTypesEntity">
+          <Key>
+            <PropertyRef Name="questionTypeID" />
+          </Key>
+          <Property Name="questionTypeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examTemplateID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="operator" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="questionTypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="dateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="QuestionBankEntity" Relationship="Model.FK_T_questionBank_T_questionTypes" FromRole="QuestionTypesEntity" ToRole="QuestionBankEntity" />
+          <NavigationProperty Name="TemplateEntity" Relationship="Model.FK_T_template_T_questionTypes" FromRole="QuestionTypesEntity" ToRole="TemplateEntity" />
+        </EntityType>
+        <EntityType Name="ScoreEntity">
+          <Key>
+            <PropertyRef Name="examID" />
+            <PropertyRef Name="examPlaceID" />
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="studentID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="studentName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="score" Type="Double" />
+          <Property Name="collegeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="StuExamEntity" Relationship="Model.FK_T_stuExam_T_score" FromRole="ScoreEntity" ToRole="StuExamEntity" />
+        </EntityType>
+        <EntityType Name="SelectQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Fration" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionFlag" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="RightAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsUse" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="OptionA" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionB" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SelectQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="StudentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionA" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionB" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OptionD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ExamAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Fration" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SelectSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" Nullable="false" />
+          <Property Name="TimeStamp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StudentBindPaperTypeEntity">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IsUse" Type="Double" />
+          <Property Name="CollegeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StudentInfoEntity">
+          <Key>
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="studentID" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CollegeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="examPlaceID" Type="Double" />
+          <Property Name="studentName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="major" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="grade" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="majorClass" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StuExamEntity">
+          <Key>
+            <PropertyRef Name="studentID" />
+            <PropertyRef Name="examID" />
+            <PropertyRef Name="examPlaceID" />
+          </Key>
+          <Property Name="studentID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="examPlaceID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="collegeID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="studentName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="major" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="grade" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="photoURL" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ControlIpEntity" Relationship="Model.FK_T_stuExam_T_controlIp" FromRole="StuExamEntity" ToRole="ControlIpEntity" />
+          <NavigationProperty Name="ScoreEntity" Relationship="Model.FK_T_stuExam_T_score" FromRole="StuExamEntity" ToRole="ScoreEntity" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SystemDictionaryEntity">
+          <Key>
+            <PropertyRef Name="dictionaryID" />
+          </Key>
+          <Property Name="dictionaryID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="dictionaryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="dictionaryType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="operator" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="dateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TemplateEntity">
+          <Key>
+            <PropertyRef Name="templateID" />
+          </Key>
+          <Property Name="templateID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="templateName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isUse" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="score" Type="Double" />
+          <Property Name="addUser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="scorePer" Type="Double" />
+          <NavigationProperty Name="ExamEntity" Relationship="Model.FK_T_template_T_exam" FromRole="TemplateEntity" ToRole="ExamEntity" />
+          <NavigationProperty Name="QuestionTypesEntity" Relationship="Model.FK_T_template_T_questionTypes" FromRole="TemplateEntity" ToRole="QuestionTypesEntity" />
+        </EntityType>
+        <EntityType Name="UserEntity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="userPassword" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="operator" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="operatorIP" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="dateTime" Type="DateTime" Precision="3" />
+          <Property Name="onLineState" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WinQuestionEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="Double" Nullable="false" />
+          <Property Name="questionTypeID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fraction" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="questionFlag" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="questionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="isUse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WinQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="questionID" />
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="questionID" Type="Double" Nullable="false" />
+          <Property Name="studentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="paperType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="questionContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="correctAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="examAnswer" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="fraction" Type="Double" />
+          <Property Name="timeStamp" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WinSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WordQuestionEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Double" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Fration" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="QuestionFlag" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsUse" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WordQuestionRecordEntity">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="QuestionID" Type="Double" Nullable="false" />
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="53" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="QuestionContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RightAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ExamAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Fration" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TimeStamp" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WordSumFration">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PaperType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QuestionTypeID" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Fration" Type="Double" />
+          <Property Name="TimeStamp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_T_stuExam_T_controlIp">
+          <End Role="ControlIpEntity" Type="Model.ControlIpEntity" Multiplicity="0..1" />
+          <End Role="StuExamEntity" Type="Model.StuExamEntity" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_T_examPlace_T_exam">
+          <End Role="ExamEntity" Type="Model.ExamEntity" Multiplicity="1" />
+          <End Role="ExamPlaceEntity" Type="Model.ExamPlaceEntity" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_T_template_T_exam">
+          <End Role="ExamEntity" Type="Model.ExamEntity" Multiplicity="0..1" />
+          <End Role="TemplateEntity" Type="Model.TemplateEntity" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_T_questionBank_T_questionTypes">
+          <End Role="QuestionTypesEntity" Type="Model.QuestionTypesEntity" Multiplicity="1" />
+          <End Role="QuestionBankEntity" Type="Model.QuestionBankEntity" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_T_template_T_questionTypes">
+          <End Role="QuestionTypesEntity" Type="Model.QuestionTypesEntity" Multiplicity="0..1" />
+          <End Role="TemplateEntity" Type="Model.TemplateEntity" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_T_stuExam_T_score">
+          <End Role="ScoreEntity" Type="Model.ScoreEntity" Multiplicity="1" />
+          <End Role="StuExamEntity" Type="Model.StuExamEntity" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ScoreEntity">
+              <PropertyRef Name="examID" />
+              <PropertyRef Name="examPlaceID" />
+              <PropertyRef Name="studentID" />
+            </Principal>
+            <Dependent Role="StuExamEntity">
+              <PropertyRef Name="examID" />
+              <PropertyRef Name="examPlaceID" />
+              <PropertyRef Name="studentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="CharcterControlEntity">
+            <EntityTypeMapping TypeName="Model.CharcterControlEntity">
+              <MappingFragment StoreEntitySet="CharcterControlEntity">
+                <ScalarProperty Name="controlID" ColumnName="controlID" />
+                <ScalarProperty Name="controlName" ColumnName="controlName" />
+                <ScalarProperty Name="isOffOn" ColumnName="isOffOn" />
+                <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CollegeEntity">
+            <EntityTypeMapping TypeName="Model.CollegeEntity">
+              <MappingFragment StoreEntitySet="CollegeEntity">
+                <ScalarProperty Name="collegeID" ColumnName="collegeID" />
+                <ScalarProperty Name="collegeName" ColumnName="collegeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ControlIpEntity">
+            <EntityTypeMapping TypeName="Model.ControlIpEntity">
+              <MappingFragment StoreEntitySet="ControlIpEntity">
+                <ScalarProperty Name="iP" ColumnName="iP" />
+                <ScalarProperty Name="collegeID" ColumnName="collegeID" />
+                <ScalarProperty Name="isNoUse" ColumnName="isNoUse" />
+                <ScalarProperty Name="examID" ColumnName="examID" />
+                <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExamEntity">
+            <EntityTypeMapping TypeName="Model.ExamEntity">
+              <MappingFragment StoreEntitySet="ExamEntity">
+                <ScalarProperty Name="examID" ColumnName="examID" />
+                <ScalarProperty Name="templateID" ColumnName="templateID" />
+                <ScalarProperty Name="examName" ColumnName="examName" />
+                <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+                <ScalarProperty Name="examDate" ColumnName="examDate" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="addUser" ColumnName="addUser" />
+                <ScalarProperty Name="isUse" ColumnName="isUse" />
+                <ScalarProperty Name="schoolYear" ColumnName="schoolYear" />
+                <ScalarProperty Name="spanTime" ColumnName="spanTime" />
+                <ScalarProperty Name="collegeID" ColumnName="collegeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExamPlaceEntity">
+            <EntityTypeMapping TypeName="Model.ExamPlaceEntity">
+              <MappingFragment StoreEntitySet="ExamPlaceEntity">
+                <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+                <ScalarProperty Name="examPlaceName" ColumnName="examPlaceName" />
+                <ScalarProperty Name="stateNow" ColumnName="stateNow" />
+                <ScalarProperty Name="shouldNum" ColumnName="shouldNum" />
+                <ScalarProperty Name="realNum" ColumnName="realNum" />
+                <ScalarProperty Name="collegeID" ColumnName="collegeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExcelQuestionEntity">
+            <EntityTypeMapping TypeName="Model.ExcelQuestionEntity">
+              <MappingFragment StoreEntitySet="ExcelQuestionEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionFlag" ColumnName="QuestionFlag" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="PositionX" ColumnName="PositionX" />
+                <ScalarProperty Name="PositionY" ColumnName="PositionY" />
+                <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExcelQuestionRecordEntity">
+            <EntityTypeMapping TypeName="Model.ExcelQuestionRecordEntity">
+              <MappingFragment StoreEntitySet="ExcelQuestionRecordEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
+                <ScalarProperty Name="ExamAnswer" ColumnName="ExamAnswer" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExcelSumFration">
+            <EntityTypeMapping TypeName="Model.ExcelSumFration">
+              <MappingFragment StoreEntitySet="ExcelSumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IEQuestionEntity">
+            <EntityTypeMapping TypeName="Model.IEQuestionEntity">
+              <MappingFragment StoreEntitySet="IEQuestionEntity">
+                <ScalarProperty Name="questionID" ColumnName="questionID" />
+                <ScalarProperty Name="questionTypeID" ColumnName="questionTypeID" />
+                <ScalarProperty Name="paperType" ColumnName="paperType" />
+                <ScalarProperty Name="fraction" ColumnName="fraction" />
+                <ScalarProperty Name="questionFlag" ColumnName="questionFlag" />
+                <ScalarProperty Name="questionContent" ColumnName="questionContent" />
+                <ScalarProperty Name="correctAnswer" ColumnName="correctAnswer" />
+                <ScalarProperty Name="isUse" ColumnName="isUse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IEQuestionRecordEntity">
+            <EntityTypeMapping TypeName="Model.IEQuestionRecordEntity">
+              <MappingFragment StoreEntitySet="IEQuestionRecordEntity">
+                <ScalarProperty Name="questionID" ColumnName="questionID" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="paperType" ColumnName="paperType" />
+                <ScalarProperty Name="questionContent" ColumnName="questionContent" />
+                <ScalarProperty Name="correctAnswer" ColumnName="correctAnswer" />
+                <ScalarProperty Name="examAnswer" ColumnName="examAnswer" />
+                <ScalarProperty Name="fraction" ColumnName="fraction" />
+                <ScalarProperty Name="timeStamp" ColumnName="timeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IESumFration">
+            <EntityTypeMapping TypeName="Model.IESumFration">
+              <MappingFragment StoreEntitySet="IESumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutLookSumFration">
+            <EntityTypeMapping TypeName="Model.OutLookSumFration">
+              <MappingFragment StoreEntitySet="OutLookSumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PptQuestionEntity">
+            <EntityTypeMapping TypeName="Model.PptQuestionEntity">
+              <MappingFragment StoreEntitySet="PptQuestionEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="QuestionFlag" ColumnName="QuestionFlag" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="RightAnswer" ColumnName="RightAnswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PptQuestionRecordEntity">
+            <EntityTypeMapping TypeName="Model.PptQuestionRecordEntity">
+              <MappingFragment StoreEntitySet="PptQuestionRecordEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="RightAnswer" ColumnName="RightAnswer" />
+                <ScalarProperty Name="ExamAnswer" ColumnName="ExamAnswer" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PptSumFration">
+            <EntityTypeMapping TypeName="Model.PptSumFration">
+              <MappingFragment StoreEntitySet="PptSumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionBankEntity">
+            <EntityTypeMapping TypeName="Model.QuestionBankEntity">
+              <MappingFragment StoreEntitySet="QuestionBankEntity">
+                <ScalarProperty Name="questionID" ColumnName="questionID" />
+                <ScalarProperty Name="fration" ColumnName="fration" />
+                <ScalarProperty Name="questionContent" ColumnName="questionContent" />
+                <ScalarProperty Name="answer1" ColumnName="answer1" />
+                <ScalarProperty Name="answer2" ColumnName="answer2" />
+                <ScalarProperty Name="answer3" ColumnName="answer3" />
+                <ScalarProperty Name="answer4" ColumnName="answer4" />
+                <ScalarProperty Name="correctAnswer" ColumnName="correctAnswer" />
+                <ScalarProperty Name="isUse" ColumnName="isUse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionTypesEntity">
+            <EntityTypeMapping TypeName="Model.QuestionTypesEntity">
+              <MappingFragment StoreEntitySet="QuestionTypesEntity">
+                <ScalarProperty Name="questionTypeID" ColumnName="questionTypeID" />
+                <ScalarProperty Name="examTemplateID" ColumnName="examTemplateID" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="questionTypeName" ColumnName="questionTypeName" />
+                <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScoreEntity">
+            <EntityTypeMapping TypeName="Model.ScoreEntity">
+              <MappingFragment StoreEntitySet="ScoreEntity">
+                <ScalarProperty Name="examID" ColumnName="examID" />
+                <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="studentName" ColumnName="studentName" />
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="collegeID" ColumnName="collegeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectQuestionEntity">
+            <EntityTypeMapping TypeName="Model.SelectQuestionEntity">
+              <MappingFragment StoreEntitySet="SelectQuestionEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="QuestionFlag" ColumnName="QuestionFlag" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="RightAnswer" ColumnName="RightAnswer" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="OptionA" ColumnName="OptionA" />
+                <ScalarProperty Name="OptionB" ColumnName="OptionB" />
+                <ScalarProperty Name="OptionC" ColumnName="OptionC" />
+                <ScalarProperty Name="OptionD" ColumnName="OptionD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectQuestionRecordEntity">
+            <EntityTypeMapping TypeName="Model.SelectQuestionRecordEntity">
+              <MappingFragment StoreEntitySet="SelectQuestionRecordEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="OptionA" ColumnName="OptionA" />
+                <ScalarProperty Name="OptionB" ColumnName="OptionB" />
+                <ScalarProperty Name="OptionC" ColumnName="OptionC" />
+                <ScalarProperty Name="OptionD" ColumnName="OptionD" />
+                <ScalarProperty Name="RightAnswer" ColumnName="RightAnswer" />
+                <ScalarProperty Name="ExamAnswer" ColumnName="ExamAnswer" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectSumFration">
+            <EntityTypeMapping TypeName="Model.SelectSumFration">
+              <MappingFragment StoreEntitySet="SelectSumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentBindPaperTypeEntity">
+            <EntityTypeMapping TypeName="Model.StudentBindPaperTypeEntity">
+              <MappingFragment StoreEntitySet="StudentBindPaperTypeEntity">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentInfoEntity">
+            <EntityTypeMapping TypeName="Model.StudentInfoEntity">
+              <MappingFragment StoreEntitySet="StudentInfoEntity">
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+                <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+                <ScalarProperty Name="studentName" ColumnName="studentName" />
+                <ScalarProperty Name="major" ColumnName="major" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="majorClass" ColumnName="majorClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StuExamEntity">
+            <EntityTypeMapping TypeName="Model.StuExamEntity">
+              <MappingFragment StoreEntitySet="StuExamEntity">
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="examID" ColumnName="examID" />
+                <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+                <ScalarProperty Name="collegeID" ColumnName="collegeID" />
+                <ScalarProperty Name="studentName" ColumnName="studentName" />
+                <ScalarProperty Name="major" ColumnName="major" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="photoURL" ColumnName="photoURL" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemDictionaryEntity">
+            <EntityTypeMapping TypeName="Model.SystemDictionaryEntity">
+              <MappingFragment StoreEntitySet="SystemDictionaryEntity">
+                <ScalarProperty Name="dictionaryID" ColumnName="dictionaryID" />
+                <ScalarProperty Name="dictionaryName" ColumnName="dictionaryName" />
+                <ScalarProperty Name="dictionaryType" ColumnName="dictionaryType" />
+                <ScalarProperty Name="isUse" ColumnName="isUse" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemplateEntity">
+            <EntityTypeMapping TypeName="Model.TemplateEntity">
+              <MappingFragment StoreEntitySet="TemplateEntity">
+                <ScalarProperty Name="templateID" ColumnName="templateID" />
+                <ScalarProperty Name="templateName" ColumnName="templateName" />
+                <ScalarProperty Name="isUse" ColumnName="isUse" />
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="addUser" ColumnName="addUser" />
+                <ScalarProperty Name="scorePer" ColumnName="scorePer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserEntity">
+            <EntityTypeMapping TypeName="Model.UserEntity">
+              <MappingFragment StoreEntitySet="UserEntity">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="operatorIP" ColumnName="operatorIP" />
+                <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+                <ScalarProperty Name="onLineState" ColumnName="onLineState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WinQuestionEntity">
+            <EntityTypeMapping TypeName="Model.WinQuestionEntity">
+              <MappingFragment StoreEntitySet="WinQuestionEntity">
+                <ScalarProperty Name="questionID" ColumnName="questionID" />
+                <ScalarProperty Name="questionTypeID" ColumnName="questionTypeID" />
+                <ScalarProperty Name="paperType" ColumnName="paperType" />
+                <ScalarProperty Name="fraction" ColumnName="fraction" />
+                <ScalarProperty Name="questionFlag" ColumnName="questionFlag" />
+                <ScalarProperty Name="questionContent" ColumnName="questionContent" />
+                <ScalarProperty Name="correctAnswer" ColumnName="correctAnswer" />
+                <ScalarProperty Name="isUse" ColumnName="isUse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WinQuestionRecordEntity">
+            <EntityTypeMapping TypeName="Model.WinQuestionRecordEntity">
+              <MappingFragment StoreEntitySet="WinQuestionRecordEntity">
+                <ScalarProperty Name="questionID" ColumnName="questionID" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="paperType" ColumnName="paperType" />
+                <ScalarProperty Name="questionContent" ColumnName="questionContent" />
+                <ScalarProperty Name="correctAnswer" ColumnName="correctAnswer" />
+                <ScalarProperty Name="examAnswer" ColumnName="examAnswer" />
+                <ScalarProperty Name="fraction" ColumnName="fraction" />
+                <ScalarProperty Name="timeStamp" ColumnName="timeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WinSumFration">
+            <EntityTypeMapping TypeName="Model.WinSumFration">
+              <MappingFragment StoreEntitySet="WinSumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WordQuestionEntity">
+            <EntityTypeMapping TypeName="Model.WordQuestionEntity">
+              <MappingFragment StoreEntitySet="WordQuestionEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionFlag" ColumnName="QuestionFlag" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="RightAnswer" ColumnName="RightAnswer" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WordQuestionRecordEntity">
+            <EntityTypeMapping TypeName="Model.WordQuestionRecordEntity">
+              <MappingFragment StoreEntitySet="WordQuestionRecordEntity">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionContent" ColumnName="QuestionContent" />
+                <ScalarProperty Name="RightAnswer" ColumnName="RightAnswer" />
+                <ScalarProperty Name="ExamAnswer" ColumnName="ExamAnswer" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WordSumFration">
+            <EntityTypeMapping TypeName="Model.WordSumFration">
+              <MappingFragment StoreEntitySet="WordSumFration">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="Fration" ColumnName="Fration" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_T_stuExam_T_controlIp" TypeName="Model.FK_T_stuExam_T_controlIp" StoreEntitySet="StuExamEntity">
+            <EndProperty Name="ControlIpEntity">
+              <ScalarProperty Name="iP" ColumnName="iP" />
+            </EndProperty>
+            <EndProperty Name="StuExamEntity">
+              <ScalarProperty Name="studentID" ColumnName="studentID" />
+              <ScalarProperty Name="examID" ColumnName="examID" />
+              <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+            </EndProperty>
+            <Condition ColumnName="iP" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_examPlace_T_exam" TypeName="Model.FK_T_examPlace_T_exam" StoreEntitySet="ExamPlaceEntity">
+            <EndProperty Name="ExamEntity">
+              <ScalarProperty Name="examID" ColumnName="examID" />
+            </EndProperty>
+            <EndProperty Name="ExamPlaceEntity">
+              <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_template_T_exam" TypeName="Model.FK_T_template_T_exam" StoreEntitySet="TemplateEntity">
+            <EndProperty Name="ExamEntity">
+              <ScalarProperty Name="examID" ColumnName="examID" />
+            </EndProperty>
+            <EndProperty Name="TemplateEntity">
+              <ScalarProperty Name="templateID" ColumnName="templateID" />
+            </EndProperty>
+            <Condition ColumnName="examID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_questionBank_T_questionTypes" TypeName="Model.FK_T_questionBank_T_questionTypes" StoreEntitySet="QuestionBankEntity">
+            <EndProperty Name="QuestionTypesEntity">
+              <ScalarProperty Name="questionTypeID" ColumnName="questionTypeID" />
+            </EndProperty>
+            <EndProperty Name="QuestionBankEntity">
+              <ScalarProperty Name="questionID" ColumnName="questionID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_template_T_questionTypes" TypeName="Model.FK_T_template_T_questionTypes" StoreEntitySet="TemplateEntity">
+            <EndProperty Name="QuestionTypesEntity">
+              <ScalarProperty Name="questionTypeID" ColumnName="questionTypeID" />
+            </EndProperty>
+            <EndProperty Name="TemplateEntity">
+              <ScalarProperty Name="templateID" ColumnName="templateID" />
+            </EndProperty>
+            <Condition ColumnName="questionTypeID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_T_stuExam_T_score" TypeName="Model.FK_T_stuExam_T_score" StoreEntitySet="StuExamEntity">
+            <EndProperty Name="ScoreEntity">
+              <ScalarProperty Name="examID" ColumnName="examID" />
+              <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+              <ScalarProperty Name="studentID" ColumnName="studentID" />
+            </EndProperty>
+            <EndProperty Name="StuExamEntity">
+              <ScalarProperty Name="studentID" ColumnName="studentID" />
+              <ScalarProperty Name="examID" ColumnName="examID" />
+              <ScalarProperty Name="examPlaceID" ColumnName="examPlaceID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
